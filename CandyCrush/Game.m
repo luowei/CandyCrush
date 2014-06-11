@@ -72,46 +72,245 @@ BOOL firstCandySelected;
 @implementation Game
 
 - (void)checkSwap{
-    
+    if(firstCandyPushed == secondCandyPushed + 1){
+        [self swapCandies];
+    }else if(firstCandyPushed == secondCandyPushed - 1){
+        [self swapCandies];
+    }else if(firstCandyPushed == secondCandyPushed + 4){
+        [self swapCandies];
+    }else if(firstCandyPushed == secondCandyPushed - 4){
+        [self swapCandies];
+    }else{
+        [self unSelectCandies];
+    }
 }
 - (void)unSelectCandies{
+    _candy1Selected.hidden = YES;
+    _candy2Selected.hidden = YES;
+    _candy3Selected.hidden = YES;
+    _candy4Selected.hidden = YES;
+    _candy5Selected.hidden = YES;
+    _candy6Selected.hidden = YES;
+    _candy7Selected.hidden = YES;
+    _candy8Selected.hidden = YES;
+    _candy9Selected.hidden = YES;
+    _candy10Selected.hidden = YES;
+    _candy11Selected.hidden = YES;
+    _candy12Selected.hidden = YES;
+    _candy13Selected.hidden = YES;
+    _candy14Selected.hidden = YES;
+    _candy15Selected.hidden = YES;
+    _candy16Selected.hidden = YES;
     
+    firstCandySelected = NO;
+    firstCandyPushed = 0;
+    firstCandyTypePushed = 0;
+    secondCandyPushed = 0;
+    secondCandyTypePushed = 0;
 }
 - (void)swapCandies{
-    
+    switch (firstCandyPushed) {
+        case 1:
+            candy1Type = secondCandyTypePushed;
+            [self candy1SelectedType];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (IBAction)candy1Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy1Selected.hidden = NO;
+        firstCandyPushed = 1;
+        firstCandyTypePushed = candy1Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 1;
+        secondCandyTypePushed = candy1Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy2Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy2Selected.hidden = NO;
+        firstCandyPushed = 2;
+        firstCandyTypePushed = candy2Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 2;
+        secondCandyTypePushed = candy2Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy3Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy3Selected.hidden = NO;
+        firstCandyPushed = 3;
+        firstCandyTypePushed = candy3Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 3;
+        secondCandyTypePushed = candy3Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy4Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy4Selected.hidden = NO;
+        firstCandyPushed = 4;
+        firstCandyTypePushed = candy4Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 4;
+        secondCandyTypePushed = candy4Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy5Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy5Selected.hidden = NO;
+        firstCandyPushed = 5;
+        firstCandyTypePushed = candy5Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 5;
+        secondCandyTypePushed = candy5Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy6Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy6Selected.hidden = NO;
+        firstCandyPushed = 6;
+        firstCandyTypePushed = candy6Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 6;
+        secondCandyTypePushed = candy6Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy7Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy7Selected.hidden = NO;
+        firstCandyPushed = 7;
+        firstCandyTypePushed = candy7Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 7;
+        secondCandyTypePushed = candy7Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy8Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy8Selected.hidden = NO;
+        firstCandyPushed = 8;
+        firstCandyTypePushed = candy8Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 8;
+        secondCandyTypePushed = candy8Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy9Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy9Selected.hidden = NO;
+        firstCandyPushed = 9;
+        firstCandyTypePushed = candy9Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 9;
+        secondCandyTypePushed = candy9Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy10Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy10Selected.hidden = NO;
+        firstCandyPushed = 10;
+        firstCandyTypePushed = candy10Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 10;
+        secondCandyTypePushed = candy10Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy11Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy11Selected.hidden = NO;
+        firstCandyPushed = 11;
+        firstCandyTypePushed = candy11Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 11;
+        secondCandyTypePushed = candy11Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy12Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy12Selected.hidden = NO;
+        firstCandyPushed = 12;
+        firstCandyTypePushed = candy12Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 12;
+        secondCandyTypePushed = candy12Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy13Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy13Selected.hidden = NO;
+        firstCandyPushed = 13;
+        firstCandyTypePushed = candy13Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 13;
+        secondCandyTypePushed = candy13Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy14Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy14Selected.hidden = NO;
+        firstCandyPushed = 14;
+        firstCandyTypePushed = candy14Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 14;
+        secondCandyTypePushed = candy14Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy15Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy15Selected.hidden = NO;
+        firstCandyPushed = 15;
+        firstCandyTypePushed = candy15Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 15;
+        secondCandyTypePushed = candy15Type;
+        [self checkSwap];
+    }
 }
 - (IBAction)candy16Button:(id)sender {
+    if(firstCandySelected==NO){
+        _candy16Selected.hidden = NO;
+        firstCandyPushed = 16;
+        firstCandyTypePushed = candy16Type;
+        firstCandySelected = YES;
+    }else{
+        secondCandyPushed = 16;
+        secondCandyTypePushed = candy16Type;
+        [self checkSwap];
+    }
 }
 
 
