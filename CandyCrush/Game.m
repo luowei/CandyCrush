@@ -114,10 +114,139 @@ BOOL firstCandySelected;
             candy1Type = secondCandyTypePushed;
             [self candy1SelectedType];
             break;
-            
+        case 2:
+            candy1Type = secondCandyTypePushed;
+            [self candy2SelectedType];
+            break;
+        case 3:
+            candy3Type = secondCandyTypePushed;
+            [self candy3SelectedType];
+            break;
+        case 4:
+            candy4Type = secondCandyTypePushed;
+            [self candy4SelectedType];
+            break;
+        case 5:
+            candy5Type = secondCandyTypePushed;
+            [self candy5SelectedType];
+            break;
+        case 6:
+            candy6Type = secondCandyTypePushed;
+            [self candy6SelectedType];
+            break;
+        case 7:
+            candy7Type = secondCandyTypePushed;
+            [self candy7SelectedType];
+            break;
+        case 8:
+            candy8Type = secondCandyTypePushed;
+            [self candy8SelectedType];
+            break;
+        case 9:
+            candy9Type = secondCandyTypePushed;
+            [self candy9SelectedType];
+            break;
+        case 10:
+            candy10Type = secondCandyTypePushed;
+            [self candy10SelectedType];
+            break;
+        case 11:
+            candy11Type = secondCandyTypePushed;
+            [self candy11SelectedType];
+            break;
+        case 12:
+            candy12Type = secondCandyTypePushed;
+            [self candy12SelectedType];
+            break;
+        case 13:
+            candy13Type = secondCandyTypePushed;
+            [self candy13SelectedType];
+            break;
+        case 14:
+            candy14Type = secondCandyTypePushed;
+            [self candy14SelectedType];
+            break;
+        case 15:
+            candy15Type = secondCandyTypePushed;
+            [self candy15SelectedType];
+            break;
+        case 16:
+            candy16Type = secondCandyTypePushed;
+            [self candy16SelectedType];
+            break;
         default:
             break;
     }
+    
+    switch (secondCandyPushed) {
+        case 1:
+            candy1Type = firstCandyTypePushed;
+            [self candy1SelectedType];
+            break;
+        case 2:
+            candy1Type = firstCandyTypePushed;
+            [self candy2SelectedType];
+            break;
+        case 3:
+            candy3Type = firstCandyTypePushed;
+            [self candy3SelectedType];
+            break;
+        case 4:
+            candy4Type = firstCandyTypePushed;
+            [self candy4SelectedType];
+            break;
+        case 5:
+            candy5Type = firstCandyTypePushed;
+            [self candy5SelectedType];
+            break;
+        case 6:
+            candy6Type = firstCandyTypePushed;
+            [self candy6SelectedType];
+            break;
+        case 7:
+            candy7Type = firstCandyTypePushed;
+            [self candy7SelectedType];
+            break;
+        case 8:
+            candy8Type = firstCandyTypePushed;
+            [self candy8SelectedType];
+            break;
+        case 9:
+            candy9Type = firstCandyTypePushed;
+            [self candy9SelectedType];
+            break;
+        case 10:
+            candy10Type = firstCandyTypePushed;
+            [self candy10SelectedType];
+            break;
+        case 11:
+            candy11Type = firstCandyTypePushed;
+            [self candy11SelectedType];
+            break;
+        case 12:
+            candy12Type = firstCandyTypePushed;
+            [self candy12SelectedType];
+            break;
+        case 13:
+            candy13Type = firstCandyTypePushed;
+            [self candy13SelectedType];
+            break;
+        case 14:
+            candy14Type = firstCandyTypePushed;
+            [self candy14SelectedType];
+            break;
+        case 15:
+            candy15Type = firstCandyTypePushed;
+            [self candy15SelectedType];
+            break;
+        case 16:
+            candy16Type = firstCandyTypePushed;
+            [self candy16SelectedType];
+            break;
+        default:
+            break;
+    }
+    [self unSelectCandies];
 }
 
 - (IBAction)candy1Button:(id)sender {
