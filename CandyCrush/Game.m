@@ -25,6 +25,13 @@ int candy14Type;
 int candy15Type;
 int candy16Type;
 
+int firstCandyPushed;
+int firstCandyTypePushed;
+int secondCandyPushed;
+int secondCandyTypePushed;
+
+BOOL firstCandySelected;
+
 @interface Game ()
 @property (weak, nonatomic) IBOutlet UIButton *candy1;
 @property (weak, nonatomic) IBOutlet UIButton *candy2;
@@ -63,6 +70,50 @@ int candy16Type;
 @end
 
 @implementation Game
+
+- (void)checkSwap{
+    
+}
+- (void)unSelectCandies{
+    
+}
+- (void)swapCandies{
+    
+}
+
+- (IBAction)candy1Button:(id)sender {
+}
+- (IBAction)candy2Button:(id)sender {
+}
+- (IBAction)candy3Button:(id)sender {
+}
+- (IBAction)candy4Button:(id)sender {
+}
+- (IBAction)candy5Button:(id)sender {
+}
+- (IBAction)candy6Button:(id)sender {
+}
+- (IBAction)candy7Button:(id)sender {
+}
+- (IBAction)candy8Button:(id)sender {
+}
+- (IBAction)candy9Button:(id)sender {
+}
+- (IBAction)candy10Button:(id)sender {
+}
+- (IBAction)candy11Button:(id)sender {
+}
+- (IBAction)candy12Button:(id)sender {
+}
+- (IBAction)candy13Button:(id)sender {
+}
+- (IBAction)candy14Button:(id)sender {
+}
+- (IBAction)candy15Button:(id)sender {
+}
+- (IBAction)candy16Button:(id)sender {
+}
+
 
 -(void)candy1SelectedType{
     switch (candy1Type) {
