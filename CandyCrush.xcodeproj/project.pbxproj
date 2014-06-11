@@ -21,6 +21,15 @@
 		EAC238A41947F16500C92F4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238861947F16500C92F4A /* UIKit.framework */; };
 		EAC238AC1947F16500C92F4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAC238AA1947F16500C92F4A /* InfoPlist.strings */; };
 		EAC238AE1947F16500C92F4A /* CandyCrushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC238AD1947F16500C92F4A /* CandyCrushTests.m */; };
+		EAC238B81947F18600C92F4A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EAC238B71947F18600C92F4A /* README.md */; };
+		EAC238C01947F27000C92F4A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238B91947F27000C92F4A /* background.png */; };
+		EAC238C11947F27000C92F4A /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238BA1947F27000C92F4A /* blue.png */; };
+		EAC238C21947F27000C92F4A /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238BB1947F27000C92F4A /* green.png */; };
+		EAC238C31947F27000C92F4A /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238BC1947F27000C92F4A /* mainMenu.png */; };
+		EAC238C41947F27000C92F4A /* pink.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238BD1947F27000C92F4A /* pink.png */; };
+		EAC238C51947F27000C92F4A /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238BE1947F27000C92F4A /* white.png */; };
+		EAC238C61947F27000C92F4A /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = EAC238BF1947F27000C92F4A /* yellow.png */; };
+		EAC238C91947F48000C92F4A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC238C81947F48000C92F4A /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,16 @@
 		EAC238A91947F16500C92F4A /* CandyCrushTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CandyCrushTests-Info.plist"; sourceTree = "<group>"; };
 		EAC238AB1947F16500C92F4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAC238AD1947F16500C92F4A /* CandyCrushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyCrushTests.m; sourceTree = "<group>"; };
+		EAC238B71947F18600C92F4A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		EAC238B91947F27000C92F4A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		EAC238BA1947F27000C92F4A /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		EAC238BB1947F27000C92F4A /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		EAC238BC1947F27000C92F4A /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
+		EAC238BD1947F27000C92F4A /* pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pink.png; sourceTree = "<group>"; };
+		EAC238BE1947F27000C92F4A /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		EAC238BF1947F27000C92F4A /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		EAC238C71947F48000C92F4A /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		EAC238C81947F48000C92F4A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +101,7 @@
 		EAC238761947F16500C92F4A = {
 			isa = PBXGroup;
 			children = (
+				EAC238B71947F18600C92F4A /* README.md */,
 				EAC238881947F16500C92F4A /* CandyCrush */,
 				EAC238A71947F16500C92F4A /* CandyCrushTests */,
 				EAC238811947F16500C92F4A /* Frameworks */,
@@ -117,6 +137,8 @@
 				EAC238941947F16500C92F4A /* Main.storyboard */,
 				EAC238971947F16500C92F4A /* ViewController.h */,
 				EAC238981947F16500C92F4A /* ViewController.m */,
+				EAC238C71947F48000C92F4A /* Game.h */,
+				EAC238C81947F48000C92F4A /* Game.m */,
 				EAC2389A1947F16500C92F4A /* Images.xcassets */,
 				EAC238891947F16500C92F4A /* Supporting Files */,
 			);
@@ -126,6 +148,13 @@
 		EAC238891947F16500C92F4A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAC238B91947F27000C92F4A /* background.png */,
+				EAC238BA1947F27000C92F4A /* blue.png */,
+				EAC238BB1947F27000C92F4A /* green.png */,
+				EAC238BC1947F27000C92F4A /* mainMenu.png */,
+				EAC238BD1947F27000C92F4A /* pink.png */,
+				EAC238BE1947F27000C92F4A /* white.png */,
+				EAC238BF1947F27000C92F4A /* yellow.png */,
 				EAC2388A1947F16500C92F4A /* CandyCrush-Info.plist */,
 				EAC2388B1947F16500C92F4A /* InfoPlist.strings */,
 				EAC2388E1947F16500C92F4A /* main.m */,
@@ -228,9 +257,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC238C21947F27000C92F4A /* green.png in Resources */,
+				EAC238C31947F27000C92F4A /* mainMenu.png in Resources */,
+				EAC238C41947F27000C92F4A /* pink.png in Resources */,
 				EAC2389B1947F16500C92F4A /* Images.xcassets in Resources */,
+				EAC238C01947F27000C92F4A /* background.png in Resources */,
+				EAC238C51947F27000C92F4A /* white.png in Resources */,
 				EAC2388D1947F16500C92F4A /* InfoPlist.strings in Resources */,
+				EAC238B81947F18600C92F4A /* README.md in Resources */,
 				EAC238961947F16500C92F4A /* Main.storyboard in Resources */,
+				EAC238C61947F27000C92F4A /* yellow.png in Resources */,
+				EAC238C11947F27000C92F4A /* blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +289,7 @@
 				EAC238991947F16500C92F4A /* ViewController.m in Sources */,
 				EAC238931947F16500C92F4A /* AppDelegate.m in Sources */,
 				EAC2388F1947F16500C92F4A /* main.m in Sources */,
+				EAC238C91947F48000C92F4A /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
