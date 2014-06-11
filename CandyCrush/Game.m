@@ -8,22 +8,9 @@
 
 #import "Game.h"
 
-int candy1Type;
-int candy2Type;
-int candy3Type;
-int candy4Type;
-int candy5Type;
-int candy6Type;
-int candy7Type;
-int candy8Type;
-int candy9Type;
-int candy10Type;
-int candy11Type;
-int candy12Type;
-int candy13Type;
-int candy14Type;
-int candy15Type;
-int candy16Type;
+int candy1Type,candy2Type,candy3Type,candy4Type,candy5Type,
+    candy6Type,candy7Type,candy8Type,candy9Type,candy10Type,
+    candy11Type,candy12Type,candy13Type,candy14Type,candy15Type,candy16Type;
 
 int firstCandyPushed;
 int firstCandyTypePushed;
@@ -31,6 +18,10 @@ int secondCandyPushed;
 int secondCandyTypePushed;
 
 BOOL firstCandySelected;
+
+BOOL candy1Deleted,candy2Deleted,candy3Deleted,candy4Deleted,candy5Deleted,
+    candy6Deleted,candy7Deleted,candy8Deleted,candy9Deleted,candy10Deleted,
+candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy16Deleted;
 
 @interface Game ()
 @property (weak, nonatomic) IBOutlet UIButton *candy1;
@@ -71,13 +62,62 @@ BOOL firstCandySelected;
 
 @implementation Game
 
+-(void)checkConnection{
+    if(candy1Type == candy2Type && candy2Type == candy3Type && candy3Type == candy4Type){
+        candy1Deleted = YES;
+        candy2Deleted = YES;
+        candy3Deleted = YES;
+        candy4Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy5Type == candy6Type && candy6Type == candy7Type && candy7Type == candy8Type){
+        candy5Deleted = YES;
+        candy6Deleted = YES;
+        candy7Deleted = YES;
+        candy8Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+}
+
+-(void)getRidOfCandies{
+    
+}
+
+-(void)replaceCandies{
+    
+}
+
 - (void)checkSwap{
     if(firstCandyPushed == secondCandyPushed + 1){
-        [self swapCandies];
+        if (firstCandyPushed == 5) {
+            [self unSelectCandies];
+        }else if(firstCandyPushed == 9){
+            [self unSelectCandies];
+        }else if(firstCandyPushed == 13){
+            [self unSelectCandies];
+        }else{
+            [self swapCandies];
+        }
     }else if(firstCandyPushed == secondCandyPushed - 1){
-        [self swapCandies];
+        if (firstCandyPushed == 4) {
+            [self unSelectCandies];
+        }else if(firstCandyPushed == 8){
+            [self unSelectCandies];
+        }else if(firstCandyPushed == 12){
+            [self unSelectCandies];
+        }else{
+            [self swapCandies];
+        }
     }else if(firstCandyPushed == secondCandyPushed + 4){
+        if (firstCandyPushed == 4) {
+            [self unSelectCandies];
+        }else if(firstCandyPushed == 8){
+            [self unSelectCandies];
+        }else if(firstCandyPushed == 12){
+            [self unSelectCandies];
+        }else{
         [self swapCandies];
+        }
     }else if(firstCandyPushed == secondCandyPushed - 4){
         [self swapCandies];
     }else{
@@ -247,6 +287,7 @@ BOOL firstCandySelected;
             break;
     }
     [self unSelectCandies];
+    [self checkConnection];
 }
 
 - (IBAction)candy1Button:(id)sender {
@@ -1003,6 +1044,8 @@ BOOL firstCandySelected;
     [self candy14SelectedType];
     [self candy15SelectedType];
     [self candy16SelectedType];
+    
+    [self performSelector:@selector(checkConnection) withObject:self afterDelay:0.1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -1012,14 +1055,14 @@ BOOL firstCandySelected;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
