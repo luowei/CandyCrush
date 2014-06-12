@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EA09CE441949866E00CD9DF0 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = EA09CE431949866E00CD9DF0 /* doc */; };
+		EA09CE501949AAE200CD9DF0 /* mouse120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = EA09CE4D1949AAE200CD9DF0 /* mouse120x120.png */; };
+		EA09CE511949AAE200CD9DF0 /* mouse50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = EA09CE4E1949AAE200CD9DF0 /* mouse50x50.png */; };
+		EA09CE521949AAE200CD9DF0 /* mouse80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = EA09CE4F1949AAE200CD9DF0 /* mouse80x80.png */; };
 		EAC238831947F16500C92F4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238821947F16500C92F4A /* Foundation.framework */; };
 		EAC238851947F16500C92F4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238841947F16500C92F4A /* CoreGraphics.framework */; };
 		EAC238871947F16500C92F4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238861947F16500C92F4A /* UIKit.framework */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		EA09CE431949866E00CD9DF0 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
+		EA09CE4D1949AAE200CD9DF0 /* mouse120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse120x120.png; sourceTree = "<group>"; };
+		EA09CE4E1949AAE200CD9DF0 /* mouse50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse50x50.png; sourceTree = "<group>"; };
+		EA09CE4F1949AAE200CD9DF0 /* mouse80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse80x80.png; sourceTree = "<group>"; };
 		EAC2387F1947F16500C92F4A /* CandyCrush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyCrush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC238821947F16500C92F4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAC238841947F16500C92F4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,6 +106,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA09CE4C1949AAE200CD9DF0 /* mouse */ = {
+			isa = PBXGroup;
+			children = (
+				EA09CE4D1949AAE200CD9DF0 /* mouse120x120.png */,
+				EA09CE4E1949AAE200CD9DF0 /* mouse50x50.png */,
+				EA09CE4F1949AAE200CD9DF0 /* mouse80x80.png */,
+			);
+			path = mouse;
+			sourceTree = "<group>";
+		};
 		EAC238761947F16500C92F4A = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +167,7 @@
 		EAC238891947F16500C92F4A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA09CE4C1949AAE200CD9DF0 /* mouse */,
 				EAC238B91947F27000C92F4A /* background.png */,
 				EAC238BA1947F27000C92F4A /* blue.png */,
 				EAC238BB1947F27000C92F4A /* green.png */,
@@ -268,8 +285,11 @@
 				EAC238C51947F27000C92F4A /* white.png in Resources */,
 				EAC2388D1947F16500C92F4A /* InfoPlist.strings in Resources */,
 				EAC238B81947F18600C92F4A /* README.md in Resources */,
+				EA09CE511949AAE200CD9DF0 /* mouse50x50.png in Resources */,
 				EAC238961947F16500C92F4A /* Main.storyboard in Resources */,
 				EA09CE441949866E00CD9DF0 /* doc in Resources */,
+				EA09CE501949AAE200CD9DF0 /* mouse120x120.png in Resources */,
+				EA09CE521949AAE200CD9DF0 /* mouse80x80.png in Resources */,
 				EAC238C61947F27000C92F4A /* yellow.png in Resources */,
 				EAC238C11947F27000C92F4A /* blue.png in Resources */,
 			);
