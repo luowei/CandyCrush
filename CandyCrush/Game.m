@@ -77,14 +77,269 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy8Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
     }
+    if(candy9Type == candy10Type && candy10Type == candy11Type && candy11Type == candy12Type){
+        candy9Deleted = YES;
+        candy10Deleted = YES;
+        candy11Deleted = YES;
+        candy12Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy13Type == candy14Type && candy14Type == candy15Type && candy15Type == candy16Type){
+        candy13Deleted = YES;
+        candy14Deleted = YES;
+        candy15Deleted = YES;
+        candy16Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy1Type == candy5Type && candy5Type == candy9Type && candy9Type == candy13Type){
+        candy1Deleted = YES;
+        candy5Deleted = YES;
+        candy9Deleted = YES;
+        candy13Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy2Type == candy6Type && candy6Type == candy10Type && candy10Type == candy14Type){
+        candy2Deleted = YES;
+        candy6Deleted = YES;
+        candy10Deleted = YES;
+        candy14Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy3Type == candy7Type && candy7Type == candy11Type && candy11Type == candy15Type){
+        candy3Deleted = YES;
+        candy7Deleted = YES;
+        candy11Deleted = YES;
+        candy15Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy4Type == candy8Type && candy8Type == candy12Type && candy12Type == candy16Type){
+        candy4Deleted = YES;
+        candy8Deleted = YES;
+        candy12Deleted = YES;
+        candy16Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    //---------
+    if(candy1Type == candy2Type && candy2Type == candy3Type){
+        candy1Deleted = YES;
+        candy2Deleted = YES;
+        candy3Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy3Type == candy2Type && candy4Type == candy3Type){
+        candy4Deleted = YES;
+        candy2Deleted = YES;
+        candy3Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy5Type == candy6Type && candy7Type == candy6Type){
+        candy5Deleted = YES;
+        candy6Deleted = YES;
+        candy7Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy6Type == candy7Type && candy7Type == candy8Type){
+        candy6Deleted = YES;
+        candy7Deleted = YES;
+        candy8Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy9Type == candy10Type && candy10Type == candy11Type){
+        candy9Deleted = YES;
+        candy10Deleted = YES;
+        candy11Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy10Type == candy11Type && candy12Type == candy11Type){
+        candy10Deleted = YES;
+        candy11Deleted = YES;
+        candy12Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy13Type == candy14Type && candy15Type == candy14Type){
+        candy13Deleted = YES;
+        candy14Deleted = YES;
+        candy15Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy14Type == candy15Type && candy16Type == candy15Type){
+        candy14Deleted = YES;
+        candy15Deleted = YES;
+        candy16Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    //-----
+    if(candy5Type == candy1Type && candy5Type == candy9Type){
+        candy5Deleted = YES;
+        candy1Deleted = YES;
+        candy9Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy5Type == candy9Type && candy9Type == candy13Type){
+        candy5Deleted = YES;
+        candy9Deleted = YES;
+        candy13Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy2Type == candy6Type && candy6Type == candy10Type){
+        candy2Deleted = YES;
+        candy6Deleted = YES;
+        candy10Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy6Type == candy10Type && candy10Type == candy14Type){
+        candy10Deleted = YES;
+        candy6Deleted = YES;
+        candy14Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy3Type == candy7Type && candy7Type == candy11Type){
+        candy3Deleted = YES;
+        candy11Deleted = YES;
+        candy7Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy7Type == candy11Type && candy11Type == candy15Type){
+        candy7Deleted = YES;
+        candy11Deleted = YES;
+        candy15Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy4Type == candy8Type && candy8Type == candy12Type){
+        candy4Deleted = YES;
+        candy8Deleted = YES;
+        candy12Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
+    if(candy8Type == candy12Type && candy12Type == candy16Type){
+        candy8Deleted = YES;
+        candy12Deleted = YES;
+        candy16Deleted = YES;
+        [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+    }
 }
 
 -(void)getRidOfCandies{
-    
+    if(candy1Deleted == YES){
+        _candy1.hidden = YES;
+        candy1Type = arc4random() % 4;
+    }
+    if(candy2Deleted == YES){
+        _candy2.hidden = YES;
+        candy2Type = arc4random() % 4;
+    }
+    if(candy3Deleted == YES){
+        _candy3.hidden = YES;
+        candy3Type = arc4random() % 4;
+    }
+    if(candy4Deleted == YES){
+        _candy4.hidden = YES;
+        candy4Type = arc4random() % 4;
+    }
+    if(candy5Deleted == YES){
+        _candy5.hidden = YES;
+        candy5Type = arc4random() % 4;
+    }
+    if(candy6Deleted == YES){
+        _candy6.hidden = YES;
+        candy6Type = arc4random() % 4;
+    }
+    if(candy7Deleted == YES){
+        _candy7.hidden = YES;
+        candy7Type = arc4random() % 4;
+    }
+    if(candy8Deleted == YES){
+        _candy8.hidden = YES;
+        candy8Type = arc4random() % 4;
+    }
+    if(candy9Deleted == YES){
+        _candy9.hidden = YES;
+        candy9Type = arc4random() % 4;
+    }
+    if(candy10Deleted == YES){
+        _candy10.hidden = YES;
+        candy10Type = arc4random() % 4;
+    }
+    if(candy11Deleted == YES){
+        _candy11.hidden = YES;
+        candy11Type = arc4random() % 4;
+    }
+    if(candy12Deleted == YES){
+        _candy12.hidden = YES;
+        candy12Type = arc4random() % 4;
+    }
+    if(candy13Deleted == YES){
+        _candy13.hidden = YES;
+        candy13Type = arc4random() % 4;
+    }
+    if(candy14Deleted == YES){
+        _candy14.hidden = YES;
+        candy14Type = arc4random() % 4;
+    }
+    if(candy15Deleted == YES){
+        _candy15.hidden = YES;
+        candy15Type = arc4random() % 4;
+    }
+    if(candy16Deleted == YES){
+        _candy16.hidden = YES;
+        candy16Type = arc4random() % 4;
+    }
+    [self performSelector:@selector(replaceCandies) withObject:self afterDelay:0.1];
 }
 
 -(void)replaceCandies{
+    [self candy1SelectedType];
+    [self candy2SelectedType];
+    [self candy3SelectedType];
+    [self candy4SelectedType];
+    [self candy5SelectedType];
+    [self candy6SelectedType];
+    [self candy7SelectedType];
+    [self candy8SelectedType];
+    [self candy9SelectedType];
+    [self candy10SelectedType];
+    [self candy11SelectedType];
+    [self candy12SelectedType];
+    [self candy13SelectedType];
+    [self candy14SelectedType];
+    [self candy15SelectedType];
+    [self candy16SelectedType];
     
+    _candy1.hidden = NO;
+    _candy2.hidden = NO;
+    _candy3.hidden = NO;
+    _candy4.hidden = NO;
+    _candy5.hidden = NO;
+    _candy6.hidden = NO;
+    _candy7.hidden = NO;
+    _candy8.hidden = NO;
+    _candy9.hidden = NO;
+    _candy10.hidden = NO;
+    _candy11.hidden = NO;
+    _candy12.hidden = NO;
+    _candy13.hidden = NO;
+    _candy14.hidden = NO;
+    _candy15.hidden = NO;
+    _candy16.hidden = NO;
+    
+    candy1Deleted = NO;
+    candy2Deleted = NO;
+    candy3Deleted = NO;
+    candy4Deleted = NO;
+    candy5Deleted = NO;
+    candy6Deleted = NO;
+    candy7Deleted = NO;
+    candy8Deleted = NO;
+    candy9Deleted = NO;
+    candy10Deleted = NO;
+    candy11Deleted = NO;
+    candy12Deleted = NO;
+    candy13Deleted = NO;
+    candy14Deleted = NO;
+    candy15Deleted = NO;
+    candy16Deleted = NO;
+    
+    [self performSelector:@selector(checkConnection) withObject:self afterDelay:0.1];
 }
 
 - (void)checkSwap{
