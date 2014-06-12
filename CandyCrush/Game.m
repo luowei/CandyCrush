@@ -9,8 +9,8 @@
 #import "Game.h"
 
 int candy1Type,candy2Type,candy3Type,candy4Type,candy5Type,
-    candy6Type,candy7Type,candy8Type,candy9Type,candy10Type,
-    candy11Type,candy12Type,candy13Type,candy14Type,candy15Type,candy16Type;
+candy6Type,candy7Type,candy8Type,candy9Type,candy10Type,
+candy11Type,candy12Type,candy13Type,candy14Type,candy15Type,candy16Type;
 
 int firstCandyPushed;
 int firstCandyTypePushed;
@@ -20,8 +20,15 @@ int secondCandyTypePushed;
 BOOL firstCandySelected;
 
 BOOL candy1Deleted,candy2Deleted,candy3Deleted,candy4Deleted,candy5Deleted,
-    candy6Deleted,candy7Deleted,candy8Deleted,candy9Deleted,candy10Deleted,
+candy6Deleted,candy7Deleted,candy8Deleted,candy9Deleted,candy10Deleted,
 candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy16Deleted;
+
+int movesLeftNumber;
+int scoreNumber;
+int addedScoreNumber;
+NSInteger highScoreNumber;
+
+BOOL gameFinished;
 
 @interface Game ()
 @property (weak, nonatomic) IBOutlet UIButton *candy1;
@@ -58,9 +65,106 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
 @property (weak, nonatomic) IBOutlet UIImageView *candy15Selected;
 @property (weak, nonatomic) IBOutlet UIImageView *candy16Selected;
 
+@property (weak, nonatomic) IBOutlet UILabel *movesLeft;
+@property (weak, nonatomic) IBOutlet UILabel *score;
+@property (weak, nonatomic) IBOutlet UILabel *highScore;
+@property (weak, nonatomic) IBOutlet UIButton *exit;
+@property (weak, nonatomic) IBOutlet UIButton *shuffle;
+
 @end
 
 @implementation Game
+
+-(void)move{
+    movesLeftNumber = movesLeftNumber - 1;
+    _movesLeft.text = [NSString stringWithFormat:@"Moves Left:%i",movesLeftNumber];
+    
+    if(movesLeftNumber < 3){
+        _shuffle.hidden = YES;
+    }
+    
+    if(movesLeftNumber == 0){
+        _candy1.hidden = YES;
+        _candy2.hidden = YES;
+        _candy3.hidden = YES;
+        _candy4.hidden = YES;
+        _candy5.hidden = YES;
+        _candy6.hidden = YES;
+        _candy7.hidden = YES;
+        _candy8.hidden = YES;
+        _candy9.hidden = YES;
+        _candy10.hidden = YES;
+        _candy11.hidden = YES;
+        _candy12.hidden = YES;
+        _candy13.hidden = YES;
+        _candy14.hidden = YES;
+        _candy15.hidden = YES;
+        _candy16.hidden = YES;
+        
+        _movesLeft.hidden = YES;
+        _highScore.hidden = YES;
+        _exit.hidden = NO;
+        gameFinished = YES;
+        
+        if(scoreNumber > highScoreNumber){
+            _highScore.hidden = YES;
+            [[NSUserDefaults standardUserDefaults]setInteger:scoreNumber forKey:@"highScoreSaved"];
+        }
+    }
+}
+
+-(void)scoring{
+    scoreNumber = scoreNumber + addedScoreNumber;
+    _score.text = [NSString stringWithFormat:@"得分:%d",scoreNumber];
+    
+    if(scoreNumber > highScoreNumber){
+        _highScore.text = [NSString stringWithFormat:@"最高得分:%i",scoreNumber];
+    }
+}
+- (IBAction)shufflePressed:(id)sender {
+    candy1Type = arc4random() % 4;
+    candy2Type = arc4random() % 4;
+    candy3Type = arc4random() % 4;
+    candy4Type = arc4random() % 4;
+    candy5Type = arc4random() % 4;
+    candy6Type = arc4random() % 4;
+    candy7Type = arc4random() % 4;
+    candy8Type = arc4random() % 4;
+    candy9Type = arc4random() % 4;
+    candy10Type = arc4random() % 4;
+    candy11Type = arc4random() % 4;
+    candy12Type = arc4random() % 4;
+    candy13Type = arc4random() % 4;
+    candy14Type = arc4random() % 4;
+    candy15Type = arc4random() % 4;
+    candy16Type = arc4random() % 4;
+    
+    [self candy1SelectedType];
+    [self candy2SelectedType];
+    [self candy3SelectedType];
+    [self candy4SelectedType];
+    [self candy5SelectedType];
+    [self candy6SelectedType];
+    [self candy7SelectedType];
+    [self candy8SelectedType];
+    [self candy9SelectedType];
+    [self candy10SelectedType];
+    [self candy11SelectedType];
+    [self candy12SelectedType];
+    [self candy13SelectedType];
+    [self candy14SelectedType];
+    [self candy15SelectedType];
+    [self candy16SelectedType];
+    
+    movesLeftNumber = movesLeftNumber - 2;
+    _movesLeft.text = [NSString stringWithFormat:@"Moves Left:%i",movesLeftNumber];
+    
+    if(movesLeftNumber < 3){
+        _shuffle.hidden = YES;
+    }
+    
+    [self performSelector:@selector(checkConnection) withObject:self afterDelay:0.3];
+}
 
 -(void)checkConnection{
     if(candy1Type == candy2Type && candy2Type == candy3Type && candy3Type == candy4Type){
@@ -69,6 +173,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy3Deleted = YES;
         candy4Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy5Type == candy6Type && candy6Type == candy7Type && candy7Type == candy8Type){
         candy5Deleted = YES;
@@ -76,6 +182,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy7Deleted = YES;
         candy8Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy9Type == candy10Type && candy10Type == candy11Type && candy11Type == candy12Type){
         candy9Deleted = YES;
@@ -83,6 +191,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy11Deleted = YES;
         candy12Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy13Type == candy14Type && candy14Type == candy15Type && candy15Type == candy16Type){
         candy13Deleted = YES;
@@ -90,6 +200,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy15Deleted = YES;
         candy16Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy1Type == candy5Type && candy5Type == candy9Type && candy9Type == candy13Type){
         candy1Deleted = YES;
@@ -97,6 +209,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy9Deleted = YES;
         candy13Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy2Type == candy6Type && candy6Type == candy10Type && candy10Type == candy14Type){
         candy2Deleted = YES;
@@ -104,6 +218,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy10Deleted = YES;
         candy14Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy3Type == candy7Type && candy7Type == candy11Type && candy11Type == candy15Type){
         candy3Deleted = YES;
@@ -111,6 +227,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy11Deleted = YES;
         candy15Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     if(candy4Type == candy8Type && candy8Type == candy12Type && candy12Type == candy16Type){
         candy4Deleted = YES;
@@ -118,6 +236,8 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy12Deleted = YES;
         candy16Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 2;
+        [self scoring];
     }
     //---------
     if(candy1Type == candy2Type && candy2Type == candy3Type){
@@ -125,48 +245,64 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy2Deleted = YES;
         candy3Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy3Type == candy2Type && candy4Type == candy3Type){
         candy4Deleted = YES;
         candy2Deleted = YES;
         candy3Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy5Type == candy6Type && candy7Type == candy6Type){
         candy5Deleted = YES;
         candy6Deleted = YES;
         candy7Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy6Type == candy7Type && candy7Type == candy8Type){
         candy6Deleted = YES;
         candy7Deleted = YES;
         candy8Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy9Type == candy10Type && candy10Type == candy11Type){
         candy9Deleted = YES;
         candy10Deleted = YES;
         candy11Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy10Type == candy11Type && candy12Type == candy11Type){
         candy10Deleted = YES;
         candy11Deleted = YES;
         candy12Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy13Type == candy14Type && candy15Type == candy14Type){
         candy13Deleted = YES;
         candy14Deleted = YES;
         candy15Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy14Type == candy15Type && candy16Type == candy15Type){
         candy14Deleted = YES;
         candy15Deleted = YES;
         candy16Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     //-----
     if(candy5Type == candy1Type && candy5Type == candy9Type){
@@ -174,48 +310,64 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         candy1Deleted = YES;
         candy9Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy5Type == candy9Type && candy9Type == candy13Type){
         candy5Deleted = YES;
         candy9Deleted = YES;
         candy13Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy2Type == candy6Type && candy6Type == candy10Type){
         candy2Deleted = YES;
         candy6Deleted = YES;
         candy10Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy6Type == candy10Type && candy10Type == candy14Type){
         candy10Deleted = YES;
         candy6Deleted = YES;
         candy14Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy3Type == candy7Type && candy7Type == candy11Type){
         candy3Deleted = YES;
         candy11Deleted = YES;
         candy7Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy7Type == candy11Type && candy11Type == candy15Type){
         candy7Deleted = YES;
         candy11Deleted = YES;
         candy15Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy4Type == candy8Type && candy8Type == candy12Type){
         candy4Deleted = YES;
         candy8Deleted = YES;
         candy12Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
     if(candy8Type == candy12Type && candy12Type == candy16Type){
         candy8Deleted = YES;
         candy12Deleted = YES;
         candy16Deleted = YES;
         [self performSelector:@selector(getRidOfCandies) withObject:self afterDelay:0.1];
+        addedScoreNumber = 1;
+        [self scoring];
     }
 }
 
@@ -339,7 +491,26 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
     candy15Deleted = NO;
     candy16Deleted = NO;
     
-    [self performSelector:@selector(checkConnection) withObject:self afterDelay:0.1];
+    if(gameFinished == YES){
+        _candy1.hidden = YES;
+        _candy2.hidden = YES;
+        _candy3.hidden = YES;
+        _candy4.hidden = YES;
+        _candy5.hidden = YES;
+        _candy6.hidden = YES;
+        _candy7.hidden = YES;
+        _candy8.hidden = YES;
+        _candy9.hidden = YES;
+        _candy10.hidden = YES;
+        _candy11.hidden = YES;
+        _candy12.hidden = YES;
+        _candy13.hidden = YES;
+        _candy14.hidden = YES;
+        _candy15.hidden = YES;
+        _candy16.hidden = YES;
+    }else{
+        [self performSelector:@selector(checkConnection) withObject:self afterDelay:0.1];
+    }
 }
 
 - (void)checkSwap{
@@ -371,7 +542,7 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
         }else if(firstCandyPushed == 12){
             [self unSelectCandies];
         }else{
-        [self swapCandies];
+            [self swapCandies];
         }
     }else if(firstCandyPushed == secondCandyPushed - 4){
         [self swapCandies];
@@ -543,6 +714,7 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
     }
     [self unSelectCandies];
     [self checkConnection];
+    [self performSelector:@selector(move) withObject:self afterDelay:0.5];
 }
 
 - (IBAction)candy1Button:(id)sender {
@@ -1249,6 +1421,14 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
 {
     [super viewDidLoad];
     
+    scoreNumber = 0;
+    movesLeftNumber = 10;
+    _score.text = [NSString stringWithFormat:@"得分:0"];
+    _movesLeft.text = [NSString stringWithFormat:@"moves left:10"];
+    
+    gameFinished = NO;
+    _exit.hidden = NO;
+    
     _candy1Selected.hidden = YES;
     _candy2Selected.hidden = YES;
     _candy3Selected.hidden = YES;
@@ -1301,6 +1481,9 @@ candy11Deleted,candy12Deleted,candy13Deleted,candy14Deleted,candy15Deleted,candy
     [self candy16SelectedType];
     
     [self performSelector:@selector(checkConnection) withObject:self afterDelay:0.1];
+    
+    highScoreNumber = [[NSUserDefaults standardUserDefaults]integerForKey:@"highScoreSaved"];
+    _highScore.text = [NSString stringWithFormat:@"最高得分:%li",(long)highScoreNumber];
 }
 
 - (void)didReceiveMemoryWarning
