@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA09CE441949866E00CD9DF0 /* doc in Resources */ = {isa = PBXBuildFile; fileRef = EA09CE431949866E00CD9DF0 /* doc */; };
 		EAC238831947F16500C92F4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238821947F16500C92F4A /* Foundation.framework */; };
 		EAC238851947F16500C92F4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238841947F16500C92F4A /* CoreGraphics.framework */; };
 		EAC238871947F16500C92F4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC238861947F16500C92F4A /* UIKit.framework */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA09CE431949866E00CD9DF0 /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
 		EAC2387F1947F16500C92F4A /* CandyCrush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyCrush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC238821947F16500C92F4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EAC238841947F16500C92F4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +108,7 @@
 				EAC238A71947F16500C92F4A /* CandyCrushTests */,
 				EAC238811947F16500C92F4A /* Frameworks */,
 				EAC238801947F16500C92F4A /* Products */,
+				EA09CE431949866E00CD9DF0 /* doc */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,6 +269,7 @@
 				EAC2388D1947F16500C92F4A /* InfoPlist.strings in Resources */,
 				EAC238B81947F18600C92F4A /* README.md in Resources */,
 				EAC238961947F16500C92F4A /* Main.storyboard in Resources */,
+				EA09CE441949866E00CD9DF0 /* doc in Resources */,
 				EAC238C61947F27000C92F4A /* yellow.png in Resources */,
 				EAC238C11947F27000C92F4A /* blue.png in Resources */,
 			);
@@ -494,6 +498,7 @@
 				EAC238B31947F16500C92F4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAC238B41947F16500C92F4A /* Build configuration list for PBXNativeTarget "CandyCrushTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +507,7 @@
 				EAC238B61947F16500C92F4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

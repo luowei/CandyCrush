@@ -5,4 +5,3 @@ CandyCrush
 
 截图：
 ![CandyCrush](https://raw.githubusercontent.com/luowei/CandyCrush/master/doc/a.png)
-![CandyCrush](https://raw.githubusercontent.com/luowei/CandyCrush/master/doc/b.png)
